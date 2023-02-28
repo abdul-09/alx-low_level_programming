@@ -7,12 +7,5 @@
 
 void reset_to_98(int *n)
 {
-	int n;
-
-	if (&n != '98')
-	{
-		_putchar('9');
-		_putchar('8');
-	}
-	_putchar('\n');
+	*n = 98
 }
