@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _strncpy - copy a string using at most n bytes from src
- * @dest: input value
+ * _strncpy - copy a string
+ * @dest: destination of string
  * @src: input value
  * @n: input value
  * Return: dest
