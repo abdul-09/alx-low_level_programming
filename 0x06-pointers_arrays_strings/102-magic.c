@@ -1,4 +1,8 @@
 #include <stdio.h>
+/**
+ * main - magic
+ * Return: 98
+ */
 
 int main(void)
 {
