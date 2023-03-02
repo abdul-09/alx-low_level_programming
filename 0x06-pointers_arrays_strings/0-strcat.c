@@ -9,7 +9,8 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i, len1, len2;
+	int i = 0;
+	int len1, len2;
 
 	while (dest[i] < '\0')
 	{
