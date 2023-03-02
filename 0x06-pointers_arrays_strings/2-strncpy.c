@@ -2,9 +2,9 @@
 
 /**
  * _strncpy - copy a string using at most n bytes from src
- * @dest: input
- * @src: input
- * @n: input
+ * @dest: input value
+ * @src: input value
+ * @n: input value
  * Return: dest
  */
 
@@ -17,7 +17,11 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[k] = scr[k];
 		k++;
 	}
-	while (k < n; k++)
+	while (k < n)
+	{
 		dest[k] = '\0';
+		k++;
+	}
+
 	return (dest);
 }
