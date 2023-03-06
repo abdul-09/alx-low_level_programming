@@ -5,14 +5,14 @@
  * @src: where to copy memory from
  * @dest: where to copy memory to
  * @n: value of bytes
- * Return: dest
+ * Return: copied memory with n bytes changed
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	int j = 0;
 
-	for (j < n; j++)
+	for (; j < n; j++)
 	{
 		dest[j] = src[j];
 		n--;
