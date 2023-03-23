@@ -1,10 +1,10 @@
 #include "function_pointers.h"
 
 /**
- * int_index - searches for index
+ * int_index - return index place if comparison = true, else -1
  * @array: array to search index from
  * @size: size of array elements
- * @cmp: a pointer to the function to be used to compare values
+ * @cmp: pointer to func of one of the 3 in main
  * Return: 0
  */
 
