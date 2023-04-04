@@ -21,7 +21,7 @@ listint *find_listint_loop(listint_t *head);
 
 /**
  * struct listint_t - singly linked list
- * @data: content of the node
+ * @n: integer
  * @link: points to the next node
  *
  */
