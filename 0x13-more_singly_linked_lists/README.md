@@ -14,18 +14,24 @@ list,and returrns the head node's data(n).
 listint_t list.
 8-sum_listint - a function that returns the sum of all the data(n) of a linked
 listint_t list.
+
 9-insert_nodeint_at_index - a function that inserts a new node at given position
+
 10-delete_nodeint_at_index - a function that deletes a node of given index of
 a listint_t linked list.
+
 11-reverse_listint - a function that reverses the listint_t linked list
+
 12-print_listint_safe - a function that prints a listint_t linked list safely.
 the function can print lists with a loop,
 it goes through the list once
 if it fails it exits with status 98
+
 13-free_listint_safe - a function that frees the listint_t linked list safely.
 it can free lists with a loop,
 it goes through the list once
 returns the size of the list that was freed
 it sets head to NULL
+
 14-find_listint_loop - a function that finds loop in listint_t linked list.
 returns address of where the loop starts of NULL if loop not present.
