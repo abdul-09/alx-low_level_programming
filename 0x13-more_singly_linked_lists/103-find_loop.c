@@ -14,10 +14,10 @@ listint_t *find_listint_loop(listint_t *head)
 
 	if (!head)
 		return (NULL);
-	while (first && last && last->link)
+	while (first && last && last->next)
 	{
-		last = last->link->link;
-		first = first->link;
+		last = last->next->next;
+		first = first->next;
 
 		if (last == first)
 		{
