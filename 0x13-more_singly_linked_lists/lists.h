@@ -20,17 +20,17 @@ size_t free_listint_safe(listint_t **h);
 listint *find_listint_loop(listint_t *head);
 
 /**
- * struct listint_t - singly linked list
+ * struct listint_c - singly linked list
  * @n: integer
  * @link: points to the next node
  *
  */
 
-struct listint_t
+typedef struct listint_c
 {
 	int n;
-	struct listint_t *link;
-};
+	struct listint_c *link;
+} listint_t;
 
 
 #endif
