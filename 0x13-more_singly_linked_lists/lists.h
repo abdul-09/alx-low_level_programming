@@ -3,6 +3,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @link: points to the next node
+ *
+ * Description: singly linked list node structure
+ */
+
+typedef struct listint_s
+{
+	int n;
+	struct listint_s *link;
+} listint_t;
+
 size_t print_listint(const listint_t *h);
 size_t listint_len(listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -18,19 +32,4 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint *head);
 size_t free_listint_safe(listint_t **h);
 listint *find_listint_loop(listint_t *head);
-
-/**
- * struct listint_c - singly linked list
- * @n: integer
- * @link: points to the next node
- *
- */
-
-typedef struct listint_c
-{
-	int n;
-	struct listint_c *link;
-} listint_t;
-
-
 #endif
