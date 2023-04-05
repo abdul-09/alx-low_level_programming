@@ -8,7 +8,8 @@ size_t print_listint_safe(const listint_t *head);
  * containing loops in linked list
  * @head: a pointer to the head of a linked list
  *
- * Return: if list isn't looped - 0, else number of nodes containing loops
+ * Return: if list isn't looped return 0
+ * otherwise number of nodes containing loops
  */
 
 size_t looped_listint_len(const listint_t *head)
@@ -24,25 +25,25 @@ size_t looped_listint_len(const listint_t *head)
 
 	while (last)
 	{
-		if (first == last)
-		{
-			first = head;
-			while (first != last)
-			{
-				nodes++;
-				first = first->next;
-				last = last->next;
-			}
-			first = first->next;
-			while (first == last)
-			{
-				nodes++;
-				first = first->next;
-			}
-			return (nodes);
-		}
-		first = first->next;
-		last = (last->next)->next;
+	if (first == last)
+	{
+	first = head;
+	while (first != last)
+	{
+	nodes++;
+	first = first->next;
+	last = last->next;
+	}
+	first = first->next;
+	while (first == last)
+	{
+	nodes++;
+	first = first->next;
+	}
+	return (nodes);
+	}
+	first = first->next;
+	last = (last->next)->next;
 	}
 	return (0);
 }
