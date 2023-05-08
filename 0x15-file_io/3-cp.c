@@ -43,6 +43,7 @@ void close_file(int file_d)
  * @argc: the number of args given to the program
  * @argv: array of pointers to the args
  * Return: 0 on success
+ *
  * description: if the argument is incorrect - exit code 97
  * if file_from does not exist or can't be read - exit code 98
  * if file_to can't be created or written to - exit code 99
@@ -66,7 +67,8 @@ int main(int argc, char *argv[])
 	do {
 		if (from == -1 || rd == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO,
+					"Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -74,7 +76,8 @@ int main(int argc, char *argv[])
 		wr = write(to, buff, rd);
 		if (to == -1 || wr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+			dprintf(STDERR_FILENO,
+					"Error: Can't read from file %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
