@@ -42,11 +42,11 @@ void close_file(int file_d)
  * main - copies contents of a file to another file
  * @argc: the number of args given to the program
  * @argv: array of pointers to the args
- * Exit description: if the argument is incorrect - exit code 97
+ * Return: 0 on success
+ * description: if the argument is incorrect - exit code 97
  * if file_from does not exist or can't be read - exit code 98
  * if file_to can't be created or written to - exit code 99
  * if file_to or file_from can't be closed - exit code 100
- * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
