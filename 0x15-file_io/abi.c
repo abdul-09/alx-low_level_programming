@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_abi - prints the ABI VERSION of an elf header
- * @elf_i: pointer to an array containing elf abi version
+ * display_abi - prints the ABI VERSION of an elf header
+ * @e_ident: pointer to an array containing elf abi version
  */
-void print_abi(unsigned char *elf_i)
+void display_abi(unsigned char *e_ident)
 {
-	printf(" ABI VERSION:	%d\n", elf_i[EI_ABIVERSION]);
+	printf(" ABI VERSION:	%d\n", e_ident[EI_ABIVERSION]);
 }
