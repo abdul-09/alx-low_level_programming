@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_osabi - prints the OS/ABI of an ELF header
- * @elf_i: a pointer to an array containing the elf version
+ * display_osabi - prints the OS/ABI of an ELF header
+ * @e_ident: a pointer to an array containing the elf version
  */
-void print_osabi(unsigned char *elf_i)
+void display_osabi(unsigned char *e_ident)
 {
 	printf(" OS/ABI:	");
 
-	switch (elf_i[EI_OSABI])
+	switch (e_ident[EI_OSABI])
 	{
 	case ELFOSABI_NONE:
 		printf("UNIX - System V\n");
@@ -38,17 +38,17 @@ void print_osabi(unsigned char *elf_i)
 		printf("Standalone App\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", elf_i[EI_OSABI]);
+		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 /**
- * print_type - prints the type of an elf header
- * @elf_i: a pointer to an array containing elf class
+ * display_type - prints the type of an elf header
+ * @e_ident: a pointer to an array containing elf class
  * @e_type: elf type
  */
-void print_type(unsigned int e_type, unsigned char *elf_i)
+void display_type(unsigned int e_type, unsigned char *e_ident)
 {
-	if (elf_i[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 	printf(" Type:		");
 
@@ -74,33 +74,33 @@ void print_type(unsigned int e_type, unsigned char *elf_i)
 	}
 }
 /**
- * print_entry - prints an entry point of an elf header
+ * display_entry - prints an entry point of an elf header
  * @e_entry: the address of the elf entry point
- * @elf_i: a pointer to an array containing the elf class
+ * @e_ident: a pointer to an array containing the elf class
  */
-void print_entry(unsigned long int e_entry, unsigned char *elf_i)
+void display_entry(unsigned long int e_entry, unsigned char *elf_i)
 {
 	printf(" Entry point address:	");
-	if (elf_i[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
 			((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
-	if (elf_i[EI_CLASS] == ELFCLASS32)
+	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 	else
 		printf("%#x\n", e_entry);
 }
 /**
- * print_version - prints the version of an elf header
- * @elf_i: pointer to an array containing elf version
+ * display_version - prints the version of an elf header
+ * @e_ident: pointer to an array containing elf version
  */
-void print_version(unsigned char *elf_i)
+void display_version(unsigned char *e_ident)
 {
-	printf(" Version:	%d", elf_i[EI_VERSION]);
+	printf(" Version:	%d", e_ident[EI_VERSION]);
 
-	switch (elf_i[EI_VERSION])
+	switch (e_ident[EI_VERSION])
 	{
 	case EV_CURRENT:
 		printf(" (current)\n");
