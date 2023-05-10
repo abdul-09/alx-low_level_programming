@@ -102,6 +102,24 @@ void display_data(unsigned char *e_ident)
 	}
 }
 /**
+ * display_version - prints the version of an elf header
+ * @e_ident: pointer to an array containing the elf version
+ */
+void display_version(unsigned char *e_ident)
+{
+	printf(" Version:		%d", e_ident[EI_VERSION]);
+
+	switch (e_ident[EI_VERSION])
+	{
+	case EV_CURRENT:
+		printf(" (current)\n");
+		break;
+	default:
+		printf("\n");
+		break;
+	}
+}
+/**
  * display_osabi - prints the OS/ABI of an ELF header
  * @e_ident: a pointer to an array containing the elf version
  */
@@ -202,24 +220,6 @@ void display_entry(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#x\n", (unsigned int)e_entry);
 	else
 		printf("%#lx\n", e_entry);
-}
-/**
- * display_version - prints the version of an elf header
- * @e_ident: pointer to an array containing elf version
- */
-void display_version(unsigned char *e_ident)
-{
-	printf(" Version:	%d", e_ident[EI_VERSION]);
-
-	switch (e_ident[EI_VERSION])
-	{
-	case EV_CURRENT:
-		printf(" (current)\n");
-		break;
-	default:
-		printf("\n");
-		break;
-	}
 }
 /**
  * close_elf - closes an elf file
