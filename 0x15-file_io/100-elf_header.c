@@ -243,7 +243,7 @@ void close_elf(int elf)
  *
  * Return: 0 on success
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int __attribute__((unused)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	int p, rd;
